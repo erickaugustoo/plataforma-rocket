@@ -69,10 +69,17 @@
 }
 
 #question-form form footer > div{
+ display: flex;
+ align-items: center;
+
  color: var(--icons-details);
  font-family: 'Poppins', sans-serif;
  font-weight: 400;
  font-size: 1.4rem;
- display: flex;
+
 
 }
+
+#question-form form footer > div img{
+  margin-right: 0.9rem;
+ }
