@@ -12,11 +12,7 @@ const checkButtons = document.querySelectorAll(".actions a.check")
 
 checkButtons.forEach(button => {
   //ADICIONAR A ESCUTA
-  button.addEventListener("click", event => {
-
-    modalTitle.innerHTML = "Marcar como lida"
-    modal.open()
-  })
+  button.addEventListener("click", handleClick)
 })
  
 
@@ -24,8 +20,31 @@ const deleteButton = document.querySelectorAll(".actions a.delete")
 
 
   deleteButton.forEach(button => {
-    button.addEventListener("click", event =>{
-      modalTitle.innerHTML = "Excluir essa pergunta"
-      modal.open()
-    })
+    button.addEventListener("click", (event) => handleClick(event, false))
   })
+
+  function handleClick(event, check = true){
+
+    event.preventDefault()
+    
+    const text = check ? "Marcar como lida " : "Excluir "
+
+    const slug = check ? "check" : "delete"
+
+    const roomId = document.querySelector("#room-id").dataset.id
+
+    const questionID = 
+    const form = document.querySelector(".modal form")
+    form.setAttribute("action", `/room/${roomId}/:question/${slug}`)
+
+
+    modalTitle.innerHTML= `${text} esta pergunta`
+
+    
+    modalDescription.innerHTML = `Tem certeza que deseja ${text.toLowerCase()} esta pergunta?`
+
+    modalButton.innerHTML = `Sim, ${text.toLowerCase()}`
+
+    check ? modalButton.classList.remove("red") : modalButton.classList.add("red")
+    modal.open()
+  }
