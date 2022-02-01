@@ -1,0 +1,24 @@
+{
+  "name": "plataforma-rocket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erickaugustoo/plataforma-rocket.git"
+  },
+  "keywords": [],
+  "author": "Erickao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erickaugustoo/plataforma-rocket/issues"
+  },
+  "homepage": "https://github.com/erickaugustoo/plataforma-rocket#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2"
+  }
+}
